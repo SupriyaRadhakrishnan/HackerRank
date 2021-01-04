@@ -37,11 +37,11 @@ public class MaxCircle {
 			        Node node2 = map.get(data2);
 			        Node parent1 = findSet(node1);
 			        Node parent2 = findSet(node2);
-			        if (parent1.data == parent2.data) {
+			        if (parent1.data == parent2.data) { // This condition should not be executed as we use map.
 			            return false;
 			        }
 			        if (parent1.rank >= parent2.rank) {
-			            parent1.rank = parent1.rank + parent2.rank;
+			            parent1.rank = parent1.rank + parent2.rank; //sum the rank
 			            parent2.parent = parent1;
 			            max = Math.max(max,parent1.rank);
 			        } else {
@@ -57,7 +57,7 @@ public class MaxCircle {
 			        if (parent == node) { //if the parent is node itself
 			            return parent;
 			        }
-			        node.parent = findSet(node.parent); // returns the parent node
+			        node.parent = findSet(node.parent); // returns the parent node by recursive call
 			        return node.parent;
 			    }
 			    
