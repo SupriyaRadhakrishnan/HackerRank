@@ -12,7 +12,7 @@ public class CavityMap {
 			System.out.println(result[i]);
 		}
 
-		
+				
 		String[] grid1 = { "989", "191", "111" };
 		result = cavityMap(grid1);
 		for (int i = 0; i < grid1.length; i++) {
