@@ -8,43 +8,23 @@ public class SurfaceArea {
 		System.out.println(surfaceArea(A));
 	}
 
-	static int surfaceArea(int[][] a) {
+	static int surfaceArea(int[][] A) {
 		
-		int area =0;
-		int H = a.length,W=a.length;
-		for(int i=0;i<H;i++){
-			for(int j=0;j<W;j++){
-				for(int k=1;k<a[i][j]+1;k++){
-					//down
-					if(k==1)
-					area++;
-					//top
-					if(k==a[i][j])
-					area++;
-					//side 1
-					if(i==0) 
-					area++;
-					else if(k-a[i-1][j]>0)
-					area++;
-					//side 2
-					if(j==W-1)
-					area++;
-					else if(k-a[i][j+1]>0)
-					area++;
-					//side 3
-					if(i==H-1)
-					area++;
-					else if(k-a[i+1][j]>0)
-					area++;
-					//side 4
-					if(j==0)
-					area++;
-					else if(k-a[i][j-1]>0)
-					area++;
+		int result = 0;
+		for (int i = 0; i < A.length; i++) {
+			for (int j = 0; j < A[0].length; j++) {
+				result += 4 * A[i][j] + 2;
+				// Check whether it is last row
+				if(i != A.length - 1) {
+					result -= 2 * Math.min(A[i][j], A[i + 1][j]);
+				}
+				// Check whether it is last column
+				if(j != A[0].length - 1) {
+					result -= 2 * Math.min(A[i][j], A[i][j + 1]);
 				}
 			}
 		}
-		return area;
+		return result;
 	}
 
 }
