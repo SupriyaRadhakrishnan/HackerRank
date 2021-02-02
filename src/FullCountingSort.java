@@ -14,6 +14,7 @@ public class FullCountingSort {
 
 	static void countSort(List<List<String>> arr) {
 
+		
 		 int max = 0;
 	        String[] s = new String[arr.size()];
 	        //System.out.println("length"  + arr.size());
@@ -32,7 +33,7 @@ public class FullCountingSort {
 	            // for (int k = 0; k < s.length; k++)
 	            //     System.out.println(s[k]);
 
-	            int a[] = new int[max + 1];
+	        int a[] = new int[max + 1];
 
 	            for (int l = 0; l < s.length; l++) {
 	                String[] str = s[l].split(" ");
