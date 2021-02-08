@@ -4,8 +4,8 @@ public class GameOfThrones {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-System.out.println(gameOfThrones("aaabbbb"));
+
+		System.out.println(gameOfThrones("aaabbbb"));
 
 	}
 
@@ -21,7 +21,7 @@ System.out.println(gameOfThrones("aaabbbb"));
 		}
 
 		if (s.length() % 2 == 0) {
-			for (Character c:letters) {
+			for (Character c : letters) {
 				if (!(Collections.frequency(letterList, c) % 2 == 0)) {
 					return "NO";
 				}
@@ -30,8 +30,8 @@ System.out.println(gameOfThrones("aaabbbb"));
 
 		else {
 
-			for (Character c:letters) {
-				if ((Collections.frequency(letterList, c)%2 != 0)) {
+			for (Character c : letters) {
+				if ((Collections.frequency(letterList, c) % 2 != 0)) {
 					count++;
 				}
 
