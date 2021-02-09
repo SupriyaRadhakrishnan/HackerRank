@@ -26,7 +26,7 @@ public class KnightlOnAChessboard {
                     continue;
                 }
                 if (ret[r-1][c-1] == 0) {
-                    ret[r-1][c-1] = move(n, 1, 2);
+                    ret[r-1][c-1] = move(n, r, c);
                 }
             }
         }
