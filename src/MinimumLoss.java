@@ -8,9 +8,12 @@ public class MinimumLoss {
 	public static void main(String[] args) {
 
 		long[] price = { 5, 10, 3 };
+		//3 = 2, 5 = 0 ,10 = 1
 		System.out.println(minimumLoss(price));
 
 		long[] price1 = { 20, 7, 8, 2, 5 };
+		//2=3,5=4,7=1,8=2,20=0
+		//20,8,7,5,2
 		System.out.println(minimumLoss(price1));
 
 	}
