@@ -6,10 +6,10 @@ public class SherlockAndAnagrams {
 	public static void main(String[] args) {
 
 		System.out.println(sherlockAndAnagrams("abba"));
-//		System.out.println(sherlockAndAnagrams("abcd"));
-//		System.out.println(sherlockAndAnagrams("ifailuhkqq"));
-//		System.out.println(sherlockAndAnagrams("kkkk"));
-//		System.out.println(sherlockAndAnagrams("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+		System.out.println(sherlockAndAnagrams("abcd"));
+		System.out.println(sherlockAndAnagrams("ifailuhkqq"));
+		System.out.println(sherlockAndAnagrams("kkkk"));
+		System.out.println(sherlockAndAnagrams("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
 	}
 
 	static int sherlockAndAnagrams(String s) {
@@ -42,8 +42,9 @@ public class SherlockAndAnagrams {
         for (int i = 0; i < substrings.size(); i++) {
         	
         	int val = isAnagram(substrings.get(i), hashedSubstrings.get(substrings.get(i).length()));
+        	List<String> tempo = hashedSubstrings.get(substrings.get(i).length());
+        	tempo.remove(substrings.get(i));
             if (val > 0) {
-            	
                 count = count + val;
             }
         }
