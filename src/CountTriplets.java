@@ -34,7 +34,7 @@ public class CountTriplets {
 	static long countTriplets(List<Long> arr, long r) {
 
 		long count = 0;
-		Map<Integer, Long> arrMap = new HashMap<Integer, Long>();
+		//Map<Integer, Long> arrMap = new HashMap<Integer, Long>();
 		List<Long> reminderList = new ArrayList<>();
 		Map<Integer, Integer> reminderMap = new HashMap<Integer, Integer>();
 		
@@ -47,33 +47,20 @@ public class CountTriplets {
 
 			if (arr.get(i) % r == 0) {
 				reminderMap.put(i, reminderMap.get(i) +1);
-				arrMap.put(i, val);
+				//arrMap.put(i, val);
 				reminderList.add(val);
 			} else {
-				arrMap.put(i, (long) 0);
+				//arrMap.put(i, (long) 0);
 				reminderList.add((long) 0);
 			}
 		}
 
-		int j = 0;
-		for (Map.Entry<Integer, Long> entry : arrMap.entrySet()) {
-
-			if (entry.getValue() >= 0) {
-				long secondTriplet = entry.getValue() * r;
-				if (entry.getValue().equals((long) 0)) {
-					secondTriplet = 1;
-				}
-				for (int i = 0; i < reminderList.size(); i++) {
-					if (i > j && (reminderList.get(i).equals(secondTriplet))) {
-						long istriplet = istriplet(reminderList, i, secondTriplet * r);
-						if (istriplet > 0) {
-							count += istriplet;
-						}
-					}
-				}
-				j++;
-			}
+		
+		
+		for (int j = 0; j < reminderList.size(); j++) {
+          
 		}
+        
 
 		return count;
 
